@@ -14,6 +14,7 @@
 		89B0858A21B0634900660E90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B0858821B0634900660E90 /* LaunchScreen.storyboard */; };
 		89B0859521B0634900660E90 /* DateTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0859421B0634900660E90 /* DateTimeTests.swift */; };
 		89B085A021B0634900660E90 /* DateTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0859F21B0634900660E90 /* DateTimeUITests.swift */; };
+		89B371FB21BEDDAD002F3764 /* DateTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B371FA21BEDDAD002F3764 /* DateTimeUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		89B0859B21B0634900660E90 /* DateTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B0859F21B0634900660E90 /* DateTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeUITests.swift; sourceTree = "<group>"; };
 		89B085A121B0634900660E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B371F821BEDDAD002F3764 /* DateTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DateTime-Bridging-Header.h"; sourceTree = "<group>"; };
+		89B371F921BEDDAD002F3764 /* DateTimeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateTimeUtil.h; sourceTree = "<group>"; };
+		89B371FA21BEDDAD002F3764 /* DateTimeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateTimeUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,9 @@
 				89B0858621B0634900660E90 /* Assets.xcassets */,
 				89B0858821B0634900660E90 /* LaunchScreen.storyboard */,
 				89B0858B21B0634900660E90 /* Info.plist */,
+				89B371F921BEDDAD002F3764 /* DateTimeUtil.h */,
+				89B371FA21BEDDAD002F3764 /* DateTimeUtil.m */,
+				89B371F821BEDDAD002F3764 /* DateTime-Bridging-Header.h */,
 			);
 			path = DateTime;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				TargetAttributes = {
 					89B0857B21B0634600660E90 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					89B0858F21B0634900660E90 = {
 						CreatedOnToolsVersion = 10.1;
@@ -256,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B371FB21BEDDAD002F3764 /* DateTimeUtil.m in Sources */,
 				89B0858221B0634700660E90 /* ViewController.swift in Sources */,
 				89B0858021B0634700660E90 /* AppDelegate.swift in Sources */,
 			);
@@ -432,15 +441,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LWX4DDJ3DH;
 				INFOPLIST_FILE = DateTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shohag.protocols.DateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = shohag.DateTimePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DateTime/DateTime-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,15 +465,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LWX4DDJ3DH;
 				INFOPLIST_FILE = DateTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shohag.protocols.DateTime;
+				PRODUCT_BUNDLE_IDENTIFIER = shohag.DateTimePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DateTime/DateTime-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

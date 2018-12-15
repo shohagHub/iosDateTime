@@ -15,6 +15,7 @@
     [self printFromStoredDate];
     [self printFromStoreDate2];
     [self dateComponentsFromDate];
+    [self dateComponentsFromDateNewApproach];
 }
 
 -(void)currentDateTime{
@@ -56,15 +57,30 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:1544465749 - [NSTimeZone localTimeZone].secondsFromGMT + storeTimeZone];
     NSCalendar *calendarFromNewyorkDate = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSDateComponents *components = [calendarFromNewyorkDate components:(NSCalendarUnitDay) | (NSCalendarUnitMonth) | (NSCalendarUnitYear) |(NSCalendarUnitHour)| (NSCalendarUnitMinute) fromDate:date];
+    NSDateComponents *components = [calendarFromNewyorkDate components:(NSCalendarUnitDay) | (NSCalendarUnitMonth) | (NSCalendarUnitYear) |(NSCalendarUnitHour)| (NSCalendarUnitMinute) | (NSCalendarUnitSecond) fromDate:date];
     
     long month = components.month;
     long day = components.day;
     long hour = components.hour;
     long minute = components.minute;
-    long seconds = components.second;
+    int64_t seconds = components.second;
     
-    NSLog(@"%ld %ld %ld %ld %ld", month, day, hour, minute, seconds);
+    NSLog(@"%ld %ld %ld %ld %lld", month, day, hour, minute, seconds);
     
 }
+
+-(void)dateComponentsFromDateNewApproach{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:1544465749];
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:-18000]];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitDay) | (NSCalendarUnitMonth) | (NSCalendarUnitYear) |(NSCalendarUnitHour)| (NSCalendarUnitMinute) | (NSCalendarUnitSecond) fromDate:date];
+    long month = components.month;
+    long day = components.day;
+    long hour = components.hour;
+    long minute = components.minute;
+    long second = components.second;
+    NSLog(@"%ld %ld %ld %ld %ld", month, day, hour, minute, second);
+    
+}
+
 @end
